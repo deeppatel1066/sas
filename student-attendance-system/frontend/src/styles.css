@@ -1,0 +1,159 @@
+:root {
+  font-family: Georgia, 'Times New Roman', serif;
+  color: #17211b;
+  background: #f2eee6;
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+
+body { margin: 0; min-width: 320px; }
+
+.app-shell {
+  min-height: 100vh;
+  padding: clamp(1.5rem, 5vw, 5rem);
+  background: radial-gradient(circle at 85% 12%, #f1b56d 0, transparent 25%), linear-gradient(135deg, #f2eee6 0%, #e4ede8 100%);
+}
+
+.entry-page { width: min(980px, 100%); margin: auto; }
+
+.eyebrow {
+  margin: 0 0 1rem;
+  color: #a04f2d;
+  font: 700 0.78rem/1.2 system-ui, sans-serif;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+h1 { margin: 0; font-size: clamp(2.35rem, 5vw, 4.5rem); line-height: 0.98; letter-spacing: -0.025em; }
+
+.intro { max-width: 480px; margin: 1.75rem 0 2.5rem; font: 1.1rem/1.6 system-ui, sans-serif; color: #536158; }
+
+.role-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.role-card { display: flex; align-items: center; gap: 1rem; min-height: 150px; padding: 1.25rem; border: 1px solid rgba(23, 33, 27, 0.18); border-radius: 0; background: rgba(255, 255, 255, 0.58); color: #17211b; text-align: left; cursor: pointer; transition: background 180ms ease, border-color 180ms ease, transform 180ms ease; }
+.role-card:hover { transform: translateY(-3px); border-color: #a04f2d; }
+.role-card.is-selected { border: 2px solid #a04f2d; background: #fffaf1; }
+.role-mark { display: grid; width: 3rem; height: 3rem; flex: 0 0 auto; place-items: center; background: #17211b; color: #f7d9a8; font: 700 1.4rem/1 system-ui, sans-serif; }
+.role-text { display: grid; gap: 0.5rem; }
+.role-text strong { font-size: 1.35rem; }
+.role-text span { max-width: 250px; color: #536158; font: 0.92rem/1.45 system-ui, sans-serif; }
+.role-arrow { margin-left: auto; font: 1.5rem/1 system-ui, sans-serif; color: #a04f2d; }
+.continue-button, .back-button { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; margin-top: 1.5rem; padding: 0.95rem 1.25rem; border: 0; border-radius: 0; background: #a04f2d; color: #fffaf1; font: 700 0.9rem/1 system-ui, sans-serif; cursor: pointer; }
+.continue-button:disabled { background: #aeb8ae; cursor: not-allowed; }
+.portal-shell { display: grid; place-items: center; }
+.portal-message { width: min(680px, 100%); }
+.dashboard-shell { width: min(980px, 100%); margin: auto; }
+.teacher-navbar { display: flex; align-items: center; justify-content: space-between; gap: 2rem; width: 100%; margin-bottom: 4rem; padding: 0.75rem 0 1rem; border-bottom: 1px solid rgba(23, 33, 27, 0.16); }
+.teacher-logo { display: grid; width: 3.25rem; height: 3.25rem; flex: 0 0 auto; place-items: center; border: 2px solid #17211b; border-radius: 50%; background: #fffaf1; color: #17211b; box-shadow: 0 5px 0 rgba(23, 33, 27, 0.2), 0 9px 16px rgba(23, 33, 27, 0.12); font: 700 1.3rem/1 Georgia, 'Times New Roman', serif; cursor: pointer; }
+.nav-links { display: flex; align-items: center; justify-content: flex-end; gap: 0.5rem; flex-wrap: wrap; margin-left: auto; }
+.nav-link { display: inline-flex; align-items: center; gap: 0.45rem; min-height: 2.35rem; padding: 0.65rem 0.8rem; border: 1px solid rgba(255, 255, 255, 0.75); border-radius: 0.2rem; background: rgba(255, 255, 255, 0.08); color: #fff; font: 700 0.82rem/1 system-ui, sans-serif; cursor: pointer; transition: background 160ms ease, color 160ms ease, border-color 160ms ease; }
+.nav-link:hover { border-color: #fffaf1; background: rgba(255, 255, 255, 0.2); color: #fffaf1; }
+.nav-link.is-active { border-color: #a04f2d; background: #a04f2d; color: #fffaf1; }
+.dashboard-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 2rem; }
+.dashboard-header h1 { max-width: 700px; }
+.profile-badge { display: grid; width: 3.5rem; height: 3.5rem; flex: 0 0 auto; place-items: center; background: #17211b; color: #f7d9a8; font: 700 1.3rem/1 system-ui, sans-serif; }
+.dashboard-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
+.dashboard-card { min-height: 260px; padding: 1.5rem; border: 1px solid rgba(23, 33, 27, 0.16); background: rgba(255, 255, 255, 0.58); }
+.dashboard-card-accent { border-top: 4px solid #a04f2d; background: #fffaf1; }
+.card-kicker { color: #a04f2d; font: 700 0.72rem/1.2 system-ui, sans-serif; letter-spacing: 0.12em; text-transform: uppercase; }
+.dashboard-card h2 { margin: 1.5rem 0 0.75rem; font: 2rem/1 Georgia, 'Times New Roman', serif; }
+.dashboard-card p { max-width: 360px; margin: 0; color: #536158; font: 0.98rem/1.55 system-ui, sans-serif; }
+.card-status { display: block; margin-top: 2rem; color: #536158; font: 700 0.78rem/1.4 system-ui, sans-serif; }
+.card-action { display: inline-flex; align-items: center; gap: 0.35rem; margin-top: 2rem; }
+.teacher-subpage { max-width: 760px; }
+.class-count-list { display: grid; gap: 0.8rem; margin-top: 2rem; }
+.class-count-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.25rem; border-left: 4px solid #a04f2d; background: rgba(255, 255, 255, 0.58); }
+.class-count-row h2 { margin: 0.55rem 0 0; font: 1.6rem/1 Georgia, 'Times New Roman', serif; }
+.class-count-row strong { color: #a04f2d; font: 700 1rem/1 system-ui, sans-serif; white-space: nowrap; }
+.class-roster { display: grid; gap: 1rem; padding: 1.25rem; border: 1px solid #17211b; background: rgba(255, 255, 255, 0.4); }
+.class-roster-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.class-roster-header h2, .unassigned-roster h2 { margin: 0.55rem 0 0; font: 1.55rem/1 Georgia, 'Times New Roman', serif; }
+.class-roster-header strong { color: #a04f2d; font: 700 0.9rem/1 system-ui, sans-serif; white-space: nowrap; }
+.student-row { display: grid; grid-template-columns: 1.1fr 1.4fr 0.8fr 1.3fr; gap: 1rem; padding: 1rem; border: 2px solid #17211b; background: #fff; font-family: system-ui, sans-serif; }
+.student-row span { display: grid; gap: 0.35rem; min-width: 0; }
+.student-row small { color: #536158; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; }
+.student-row strong { overflow-wrap: anywhere; font-size: 0.9rem; }
+.empty-roster { margin: 0; color: #536158; font: 0.9rem/1.4 system-ui, sans-serif; }
+.unassigned-roster { display: grid; gap: 1rem; padding-top: 1.5rem; }
+.profile-summary { display: flex; align-items: center; gap: 1rem; max-width: 480px; padding: 1.25rem; background: rgba(255, 255, 255, 0.58); font-family: system-ui, sans-serif; }
+.profile-logo { width: 3rem; height: 3rem; box-shadow: none; }
+.profile-summary div { display: grid; gap: 0.35rem; }
+.profile-summary span:not(.teacher-logo) { color: #536158; font-size: 0.9rem; }
+.teacher-profile-heading { display: flex; align-items: center; gap: 1rem; }
+.teacher-profile-heading h1 { margin: 0; }
+.student-profile-heading { display: flex; align-items: center; gap: 1rem; }
+.student-profile-heading h1 { margin: 0; }
+.profile-email { margin: 0.4rem 0 0; color: #536158; font: 0.95rem/1.4 system-ui, sans-serif; }
+.profile-enrollment { display: block; margin-top: 0.45rem; color: #536158; font: 700 0.78rem/1.4 system-ui, sans-serif; }
+.profile-metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.8rem; margin: 2rem 0; }
+.profile-metrics div { display: grid; gap: 0.45rem; padding: 1.1rem; border: 1px solid rgba(23, 33, 27, 0.2); background: rgba(255, 255, 255, 0.58); }
+.profile-metrics strong { color: #a04f2d; font: 700 2rem/1 system-ui, sans-serif; }
+.profile-metrics span { color: #536158; font: 700 0.72rem/1.3 system-ui, sans-serif; text-transform: uppercase; }
+.profile-classes { display: grid; gap: 0.8rem; }
+.profile-class-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.1rem; border: 1px solid #17211b; background: #fff; }
+.profile-class-row h2 { margin: 0.45rem 0; font: 1.5rem/1 Georgia, 'Times New Roman', serif; }
+.profile-class-row p { margin: 0; color: #536158; font: 0.85rem/1.4 system-ui, sans-serif; }
+.profile-class-row > strong { color: #a04f2d; font: 700 1.2rem/1 system-ui, sans-serif; letter-spacing: 0.1em; }
+.student-form { display: grid; gap: 0.7rem; max-width: 520px; font-family: system-ui, sans-serif; text-align: left; }
+.student-form label { margin-top: 0.65rem; font-size: 0.85rem; font-weight: 700; }
+.student-form input, .student-form select { width: 100%; padding: 0.9rem 1rem; border: 1px solid rgba(23, 33, 27, 0.28); border-radius: 0; background: rgba(255, 255, 255, 0.7); color: #17211b; font: 1rem/1.2 system-ui, sans-serif; }
+.student-form input:focus, .student-form select:focus { outline: 2px solid #a04f2d; outline-offset: 2px; }
+.student-class-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.student-class-card { padding: 1.4rem; border: 1px solid rgba(23, 33, 27, 0.18); border-top: 4px solid #a04f2d; background: #fffaf1; }
+.student-class-card h2 { margin: 1rem 0 0.7rem; font: 2rem/1 Georgia, 'Times New Roman', serif; }
+.student-class-card p { margin: 0.35rem 0; color: #536158; font: 0.9rem/1.4 system-ui, sans-serif; }
+.attendance-form { display: grid; gap: 0.55rem; margin-top: 1.5rem; font-family: system-ui, sans-serif; }
+.attendance-form label { font-size: 0.8rem; font-weight: 700; }
+.attendance-form input { width: 100%; padding: 0.75rem; border: 1px solid rgba(23, 33, 27, 0.28); border-radius: 0; background: #fff; font: 1rem/1 system-ui, sans-serif; letter-spacing: 0.12em; }
+.attendance-form input:focus { outline: 2px solid #a04f2d; outline-offset: 2px; }
+.student-subpage { max-width: 760px; }
+.history-list { display: grid; gap: 0.7rem; margin-top: 2rem; }
+.history-row { display: grid; grid-template-columns: 1.1fr 1fr 1.2fr; gap: 1rem; padding: 1rem; border: 1px solid rgba(23, 33, 27, 0.2); background: rgba(255, 255, 255, 0.58); font: 0.9rem/1.4 system-ui, sans-serif; }
+.history-row span, .history-row time { color: #536158; }
+.sheet-notifications { display: grid; gap: 0.8rem; margin-top: 2.5rem; padding: 1.25rem; border: 1px solid rgba(23, 33, 27, 0.2); background: rgba(255, 255, 255, 0.58); font-family: system-ui, sans-serif; }
+.sheet-notifications h2 { margin: 0.4rem 0 0.8rem; font: 1.6rem/1 Georgia, 'Times New Roman', serif; }
+.request-row { display: grid; grid-template-columns: 1fr 1fr auto; align-items: center; gap: 1rem; padding: 0.8rem; border: 1px solid #17211b; background: #fff; font-size: 0.9rem; }
+.allow-button { padding: 0.6rem 0.8rem; border: 0; background: #17211b; color: #fffaf1; font: 700 0.8rem/1 system-ui, sans-serif; cursor: pointer; }
+.teacher-workspace { width: min(720px, 100%); margin: auto; }
+.class-form { display: grid; gap: 0.7rem; max-width: 620px; font-family: system-ui, sans-serif; }
+.class-form label { margin-top: 0.65rem; font-size: 0.85rem; font-weight: 700; }
+.class-form input, .class-form select { width: 100%; padding: 0.9rem 1rem; border: 1px solid rgba(23, 33, 27, 0.28); border-radius: 0; background: rgba(255, 255, 255, 0.7); color: #17211b; font: 1rem/1.2 system-ui, sans-serif; }
+.class-form input:focus, .class-form select:focus { outline: 2px solid #a04f2d; outline-offset: 2px; }
+.field-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.field-row > div { display: grid; gap: 0.7rem; }
+.code-result { margin-top: 2rem; padding: 1.5rem; border-left: 4px solid #a04f2d; background: rgba(255, 255, 255, 0.62); font-family: system-ui, sans-serif; }
+.code-result h2 { margin: 0; font: 2rem/1.1 Georgia, 'Times New Roman', serif; }
+.code-result p:not(.eyebrow) { color: #536158; }
+.attendance-code { display: block; margin: 1.5rem 0 0.5rem; color: #a04f2d; font: 700 clamp(2.5rem, 10vw, 4.5rem)/1 system-ui, sans-serif; letter-spacing: 0.12em; }
+.workspace-back { margin-top: 1.5rem; }
+.feature-list { display: grid; gap: 0.75rem; margin: 2rem 0 0; padding: 0; list-style: none; font: 1rem/1.4 system-ui, sans-serif; }
+.feature-list li { padding: 1rem; border-left: 3px solid #a04f2d; background: rgba(255, 255, 255, 0.55); }
+.login-panel { width: min(560px, 100%); margin: auto; }
+.text-button { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0; border: 0; background: transparent; color: #a04f2d; font: 700 0.9rem/1 system-ui, sans-serif; cursor: pointer; }
+.login-form { display: grid; gap: 0.7rem; max-width: 480px; font-family: system-ui, sans-serif; }
+.login-form label { margin-top: 0.65rem; font-size: 0.85rem; font-weight: 700; }
+.login-form input { width: 100%; padding: 0.9rem 1rem; border: 1px solid rgba(23, 33, 27, 0.28); border-radius: 0; background: rgba(255, 255, 255, 0.7); color: #17211b; font: 1rem/1.2 system-ui, sans-serif; }
+.login-form input:focus { outline: 2px solid #a04f2d; outline-offset: 2px; }
+.form-error { margin: 0.55rem 0 0; color: #a04f2d; font-size: 0.9rem; font-weight: 700; }
+.form-note { margin: 0.2rem 0 0; color: #536158; font-size: 0.8rem; line-height: 1.5; }
+.auth-switch { margin-top: 1rem; }
+
+@media (max-width: 680px) {
+  .role-options { grid-template-columns: 1fr; }
+  .role-card { min-height: 125px; }
+  .field-row { grid-template-columns: 1fr; gap: 0; }
+  .dashboard-header { gap: 1rem; }
+  .dashboard-grid { grid-template-columns: 1fr; }
+  .dashboard-card { min-height: 220px; }
+  .student-class-grid { grid-template-columns: 1fr; }
+  .history-row { grid-template-columns: 1fr; gap: 0.3rem; }
+  .request-row { grid-template-columns: 1fr; gap: 0.5rem; }
+  .teacher-navbar { align-items: flex-start; gap: 1rem; margin-bottom: 2.5rem; }
+  .nav-links { gap: 0.35rem; }
+  .nav-link { min-height: 2.2rem; padding: 0.55rem 0.65rem; }
+  .class-count-row { align-items: flex-start; flex-direction: column; }
+  .class-roster-header { align-items: flex-start; flex-direction: column; }
+  .student-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .profile-metrics { grid-template-columns: 1fr; }
+  .profile-class-row { align-items: flex-start; flex-direction: column; }
+}
